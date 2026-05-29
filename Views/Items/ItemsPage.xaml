@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DCMAUI.Views.Items.ItemsPage"
+             Title="Items">
+    <Grid RowDefinitions="Auto,*">
+        <SearchBar Grid.Row="0" x:Name="SearchBar" Placeholder="Search items..." TextChanged="OnSearchChanged" Margin="16,8"/>
+        <CollectionView Grid.Row="1" x:Name="ItemsCollection" Margin="16,0">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="0,6" CornerRadius="10" Padding="16">
+                        <VerticalStackLayout>
+                            <Label Text="{Binding Name}" FontAttributes="Bold"/>
+                            <Label Text="{Binding Type}" TextColor="#6C63FF" FontSize="12"/>
+                            <Label Text="{Binding Notes}" TextColor="Gray" FontSize="12"/>
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

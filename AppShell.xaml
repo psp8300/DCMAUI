@@ -3,12 +3,38 @@
     x:Class="DCMAUI.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:DCMAUI"
-    Title="DCMAUI">
+    xmlns:dashboard="clr-namespace:DCMAUI.Views.Dashboard"
+    xmlns:lists="clr-namespace:DCMAUI.Views.Lists"
+    xmlns:items="clr-namespace:DCMAUI.Views.Items"
+    xmlns:activity="clr-namespace:DCMAUI.Views.Activity"
+    xmlns:workday="clr-namespace:DCMAUI.Views.Workday"
+    Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <TabBar>
+        <ShellContent
+            Title="Dashboard"
+            ContentTemplate="{DataTemplate dashboard:DashboardPage}"
+            Route="dashboard" />
+
+        <ShellContent
+            Title="Lists"
+            ContentTemplate="{DataTemplate lists:ListsPage}"
+            Route="lists" />
+
+        <ShellContent
+            Title="Items"
+            ContentTemplate="{DataTemplate items:ItemsPage}"
+            Route="items" />
+
+        <ShellContent
+            Title="Activity"
+            ContentTemplate="{DataTemplate activity:ActivityPage}"
+            Route="activity" />
+
+        <ShellContent
+            Title="Workday"
+            ContentTemplate="{DataTemplate workday:WorkdayPage}"
+            Route="workday" />
+    </TabBar>
 
 </Shell>

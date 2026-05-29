@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DCMAUI.Views.Dashboard.DashboardPage"
+             Title="Dashboard">
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="16">
+            <Label Text="Dashboard" FontSize="24" FontAttributes="Bold"/>
+            <ActivityIndicator x:Name="LoadingIndicator" IsRunning="True" IsVisible="True" Color="#6C63FF"/>
+            <Grid x:Name="StatsGrid" ColumnDefinitions="*,*" RowDefinitions="Auto,Auto" ColumnSpacing="12" RowSpacing="12" IsVisible="False">
+                <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="#6C63FF" CornerRadius="12" Padding="16">
+                    <VerticalStackLayout>
+                        <Label x:Name="ListsCount" Text="0" FontSize="28" FontAttributes="Bold" TextColor="White"/>
+                        <Label Text="Lists" TextColor="White"/>
+                    </VerticalStackLayout>
+                </Frame>
+                <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="#FF6584" CornerRadius="12" Padding="16">
+                    <VerticalStackLayout>
+                        <Label x:Name="ItemsCount" Text="0" FontSize="28" FontAttributes="Bold" TextColor="White"/>
+                        <Label Text="Items" TextColor="White"/>
+                    </VerticalStackLayout>
+                </Frame>
+                <Frame Grid.Row="1" Grid.Column="0" BackgroundColor="#43C59E" CornerRadius="12" Padding="16">
+                    <VerticalStackLayout>
+                        <Label x:Name="ActivitiesCount" Text="0" FontSize="28" FontAttributes="Bold" TextColor="White"/>
+                        <Label Text="Activities" TextColor="White"/>
+                    </VerticalStackLayout>
+                </Frame>
+                <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="#FFB347" CornerRadius="12" Padding="16">
+                    <VerticalStackLayout>
+                        <Label x:Name="EventsCount" Text="0" FontSize="28" FontAttributes="Bold" TextColor="White"/>
+                        <Label Text="Upcoming" TextColor="White"/>
+                    </VerticalStackLayout>
+                </Frame>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

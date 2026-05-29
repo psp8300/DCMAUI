@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DCMAUI.Views.Lists.ListsPage"
+             Title="Lists">
+    <Grid RowDefinitions="Auto,*">
+        <Button Grid.Row="0" Text="+ New List" Margin="16" BackgroundColor="#6C63FF" TextColor="White" CornerRadius="8" Clicked="OnNewListClicked"/>
+        <CollectionView Grid.Row="1" x:Name="ListsCollection" Margin="16,0">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="0,6" CornerRadius="10" Padding="16">
+                        <HorizontalStackLayout Spacing="12">
+                            <BoxView WidthRequest="12" HeightRequest="12" CornerRadius="6" Color="{Binding Color}" VerticalOptions="Center"/>
+                            <VerticalStackLayout>
+                                <Label Text="{Binding Name}" FontAttributes="Bold"/>
+                                <Label Text="{Binding ItemCount, StringFormat='{0} items'}" TextColor="Gray" FontSize="12"/>
+                            </VerticalStackLayout>
+                        </HorizontalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

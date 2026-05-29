@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DCMAUI.Views.Login.LoginPage"
+             Title="Login"
+             NavigationPage.HasNavigationBar="False">
+    <VerticalStackLayout Padding="32" Spacing="16" VerticalOptions="Center">
+        <Label Text="DClutter" FontSize="36" FontAttributes="Bold" HorizontalOptions="Center" TextColor="#6C63FF"/>
+        <Label Text="Sign in to your account" FontSize="16" HorizontalOptions="Center" TextColor="Gray"/>
+        <Entry x:Name="EmailEntry" Placeholder="Email" Keyboard="Email" />
+        <Entry x:Name="PasswordEntry" Placeholder="Password" IsPassword="True" />
+        <Button Text="Login" Clicked="OnLoginClicked" BackgroundColor="#6C63FF" TextColor="White" CornerRadius="8"/>
+        <ActivityIndicator x:Name="LoadingIndicator" IsVisible="False" IsRunning="False" Color="#6C63FF"/>
+        <Label x:Name="ErrorLabel" Text="" TextColor="Red" HorizontalOptions="Center" IsVisible="False"/>
+    </VerticalStackLayout>
+</ContentPage>
